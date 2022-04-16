@@ -30,7 +30,7 @@ juiceShop:
       privacyContactEmail: privacy@patsa.org
       chatBot:
         name: Patsa
-        avatar: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/tsa.svg
+        avatar: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/TSA.png
       social:
         twitterUrl: #
         facebookUrl: #
@@ -46,7 +46,7 @@ juiceShop:
       securityTxt:
         contact: mailto:donotreply@patsa.org
       promotion:
-        video: https://github.com/incyclesoftware/multi-juicer/blob/features/tsa-config/images/MIB2.mp4?raw=true
+        video: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/MIB2.mp4
         subtitles: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/MIB2.vtt
 
     challenges:
