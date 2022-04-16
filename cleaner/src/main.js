@@ -36,7 +36,7 @@ async function main() {
   };
 
   console.log(
-    `Looking for Juice Shop Instances which have been inactive for more than ${MaxInactiveDuration}.`
+    `Looking for TSA Shop Instances which have been inactive for more than ${MaxInactiveDuration}.`
   );
   const instances = await k8sAppsApi.listNamespacedDeployment(
     Namespace,
@@ -99,7 +99,7 @@ async function main() {
 
 main()
   .then((counts) => {
-    console.log('Finished Juice Shop Instance Cleanup');
+    console.log('Finished TSA Shop Instance Cleanup');
     console.log('');
     console.log('Successful deletions:');
     console.log(`  Deployments: ${counts.successful.deployments}`);

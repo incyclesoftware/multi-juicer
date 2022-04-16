@@ -117,7 +117,7 @@ func workOnProgressUpdates(progressUpdateJobs <-chan ProgressUpdateJobs, clients
 		currentContinueCode, err := getCurrentContinueCode(job.Teamname)
 
 		if err != nil {
-			log.Warningf("Failed to fetch ContinueCode for team '%s' from Juice Shop", job.Teamname)
+			log.Warningf("Failed to fetch ContinueCode for team '%s' from TSA Shop", job.Teamname)
 			log.Warning(err)
 			continue
 		}
@@ -138,7 +138,7 @@ func workOnProgressUpdates(progressUpdateJobs <-chan ProgressUpdateJobs, clients
 			currentContinueCode, err = getCurrentContinueCode(job.Teamname)
 
 			if err != nil {
-				log.Errorf("Failed to fetch ContinueCode from Juice Shop for team '%s' to reapply it", job.Teamname)
+				log.Errorf("Failed to fetch ContinueCode from TSA Shop for team '%s' to reapply it", job.Teamname)
 				log.Error(err)
 				continue
 			}
@@ -164,7 +164,7 @@ func getCurrentContinueCode(teamname string) (string, error) {
 	}
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Warning("Failed to fetch ContinueCode from juice shop")
+		log.Warning("Failed to fetch ContinueCode from TSA shop")
 		log.Warning(err)
 		return "", errors.New("Failed to fetch ContinueCode")
 	}
@@ -176,7 +176,7 @@ func getCurrentContinueCode(teamname string) (string, error) {
 
 		if err != nil {
 			log.Error("Failed to read response body stream")
-			return "", errors.New("Failed to response body stream from Juice Shop")
+			return "", errors.New("Failed to response body stream from TSA Shop")
 		}
 
 		continueCodePayload := ContinueCodePayload{}
@@ -186,14 +186,14 @@ func getCurrentContinueCode(teamname string) (string, error) {
 		if err != nil {
 			log.Error("Failed to parse json of a challenge status")
 			log.Error(err)
-			return "", errors.New("Failed to parse JSON from Juice Shop ContinueCode response")
+			return "", errors.New("Failed to parse JSON from TSA Shop ContinueCode response")
 		}
 
 		log.Debugf("Got current ContinueCode: '%s'", continueCodePayload.ContinueCode)
 
 		return continueCodePayload.ContinueCode, nil
 	default:
-		return "", fmt.Errorf("Unexpected response status code '%d' from Juice Shop", res.StatusCode)
+		return "", fmt.Errorf("Unexpected response status code '%d' from TSA Shop", res.StatusCode)
 	}
 }
 
@@ -207,7 +207,7 @@ func applyContinueCode(teamname, continueCode string) {
 	}
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Warning("Failed to set the current ContinueCode to juice shop")
+		log.Warning("Failed to set the current ContinueCode to TSA shop")
 		log.Warning(err)
 	}
 	defer res.Body.Close()
