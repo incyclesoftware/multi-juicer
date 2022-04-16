@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled, { createGlobalStyle } from 'styled-components';
 
-import multiJuicerLogo from './multi-juicer.svg';
+import multiJuicerLogo from './tsa.svg';
 import { Card } from './Components';
 
 const Header = styled.div`
