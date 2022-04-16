@@ -45,14 +45,17 @@ juiceShop:
         message: 'This website uses cookies to ensure you get the best tracking experience.'
       securityTxt:
         contact: mailto:donotreply@patsa.org
-      promotion:
-        video: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/MIB2.mp4
-        subtitles: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/MIB2.vtt
-
     challenges:
-      showHints: true
+      showHints: false
+      showMitigations: false
+      codingChallengesEnabled: never
+      overwriteUrlForProductTamperingChallenge: http://patsa.org/
+      xssBonusPayload: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/148688836&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
+      safetyOverride: false
+      showFeedbackButtons: false
     hackingInstructor:
-      isEnabled: true
+      isEnabled: false
+      avatarImage: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/TSA.png
     ctf:
       showFlagsInNotifications: false
 # grafana:
