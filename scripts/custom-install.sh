@@ -1,3 +1,9 @@
+grafanaAdminPassword=$(cat ./.secrets/grafana-password-admin)
+balancerMetricsBasicAuthPassword=$(cat ./.secrets/balancer-metrics-basicAuth-password)
+
+echo $grafanaAdminPassword
+echo $balancerMetricsBasicAuthPassword
+
 # ########################################################
 # # Install nginx
 # ########################################################
@@ -20,7 +26,7 @@ echo "Installing prometheus-operator..."
 wget -N https://raw.githubusercontent.com/iteratec/multi-juicer/master/guides/monitoring-setup/prometheus-operator-config.yaml
 
 echo "Installing Prometheus Operator & Grafana..."
-helm --namespace monitoring upgrade --install monitoring prometheus-community/kube-prometheus-stack --version 13.3.0 --values prometheus-operator-config.yaml
+helm --namespace monitoring upgrade --install monitoring prometheus-community/kube-prometheus-stack --version 13.3.0 --values prometheus-operator-config.yaml --set="grafana.adminPassword=$grafanaAdminPassword"
 
 echo "Installing loki..."
 helm --namespace monitoring upgrade --install loki grafana/loki --version 2.3.0 --set="serviceMonitor.enabled=true"
@@ -34,7 +40,8 @@ helm --namespace monitoring upgrade --install promtail grafana/promtail --versio
 
 echo "Installing MultiJuicer..."
 helm repo add multi-juicer https://iteratec.github.io/multi-juicer/
-helm install -f ./custom-values.yaml multi-juicer multi-juicer/multi-juicer
+helm install -f ./custom-values.yaml multi-juicer multi-juicer/multi-juicer \
+  --set "balancer.metrics.basicAuth.password=$balancerMetricsBasicAuthPassword"
 
 # We got a example loadbalancer yaml for this example in the repository
 wget -N https://raw.githubusercontent.com/iteratec/multi-juicer/master/guides/k8s/k8s-juice-service.yaml
