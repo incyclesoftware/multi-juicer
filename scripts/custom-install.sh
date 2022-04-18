@@ -42,5 +42,5 @@ wget -N https://raw.githubusercontent.com/iteratec/multi-juicer/master/guides/k8
 # Create the loadbalancers
 
 kubectl apply -f k8s-juice-service.yaml
-# # kubectl apply --namespace monitoring --file k8s-monitoring-service.yaml
+kubectl apply -f k8s-monitoring-service.yaml -n monitoring
 
