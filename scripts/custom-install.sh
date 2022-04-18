@@ -1,8 +1,6 @@
 grafanaAdminPassword=$(cat ./.secrets/grafana-password-admin)
 balancerMetricsBasicAuthPassword=$(cat ./.secrets/balancer-metrics-basicAuth-password)
 
-echo $grafanaAdminPassword
-echo $balancerMetricsBasicAuthPassword
 
 # ########################################################
 # # Install nginx
