@@ -13,8 +13,8 @@ balancer:
     name: balancer
     # -- Set this to a fixed random alpa-numeric string (recommended length 24 chars). If not set this get randomly generated with every helm upgrade, each rotation invalidates all active cookies / sessions requirering users to login again.
     cookieParserSecret: N2TUDtV5FyPM3DAAfy5iCEaD
-  repository: iteratec/juice-balancer
-  tag: null
+  repository: ghcr.io/incyclesoftware/mb-juice-balancer
+  tag: latest
   metrics:
     enabled: true
     dashboards:
