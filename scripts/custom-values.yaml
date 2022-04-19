@@ -47,15 +47,15 @@ juiceShop:
     application:
       domain: patsa.org
       name: PA TSA Cybersecurity Shop
-      logo: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/tsa.svg
-      favicon: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/tsa.svg
+      logo: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa/images/tsa.svg
+      favicon: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa/images/tsa.svg
       showVersionNumber: false
       showGitHubLinks: false
       altcoinName: TSAcoin
       privacyContactEmail: privacy@patsa.org
       chatBot:
         name: Patsa
-        avatar: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/TSA.png
+        avatar: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa/images/TSA.png
       social:
         twitterUrl: #
         facebookUrl: #
@@ -80,6 +80,6 @@ juiceShop:
       showFeedbackButtons: false
     hackingInstructor:
       isEnabled: false
-      avatarImage: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa-config/images/TSA.png
+      avatarImage: https://raw.githubusercontent.com/incyclesoftware/multi-juicer/features/tsa/images/TSA.png
     ctf:
       showFlagsInNotifications: false
